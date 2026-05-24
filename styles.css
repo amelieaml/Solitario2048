@@ -1,0 +1,90 @@
+:root {
+    --dark-green: #1a523a;
+    --brown: #4e342e;
+    --card-width: 75px;
+    --card-height: 100px;
+}
+
+body {
+    background-color: #2c1e16; 
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 400px;
+    background: var(--dark-green);
+    padding: 25px;
+    border: 10px solid var(--brown);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 8px;
+}
+
+.game-header { 
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.current-score { 
+    font-size: 3rem; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+
+.btn-reset { 
+    background: #b71c1c; 
+    color: white; 
+    border: 2px solid rgb(83, 1, 1); 
+    padding: 5px 15px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    border-radius: 8px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.column {
+    min-height: 300px;
+    border: 2px dashed rgba(255,255,255,0.2);
+    border-radius: 8px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.deck-area {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 20px;
+    border-top: 2px solid rgba(255,255,255,0.1);
+}
+
+.card { 
+    width: var(--card-width); 
+    height: var(--card-height); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+}
+
+.card-2      { background-image: url('cartas/carta1.png'); }
+.card-4      { background-image: url('cartas/carta2.png'); }
+.card-8      { background-image: url('cartas/carta3.png'); }
+.card-16     { background-image: url('cartas/carta4.png'); }
+.card-32     { background-image: url('cartas/carta5.png'); }
+.card-64     { background-image: url('cartas/carta6.png'); }
+.card-128    { background-image: url('cartas/carta7.png'); }
+.card-256    { background-image: url('cartas/carta8.png'); }
+.card-512    { background-image: url('cartas/carta9.png'); }
+.card-1024   { background-image: url('cartas/carta10.png'); }
+.card-2048   { background-image: url('cartas/carta11.png'); }
+.card-4096   { background-image: url('cartas/carta12.png'); }
+.card-discard0 { background-image: url('cartas/cartaDescarte0.png'); }
+.card-discard1 { background-image: url('cartas/cartaDescarte1.png'); }
