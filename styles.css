@@ -1,12 +1,15 @@
 :root {
-    --dark-green: #1a523a;
-    --brown: #4e342e;
+    --bg-dark: #0f051c;          
+    --container-bg: #210940;    
+    --purple: #9d4edd;     
+    --cyan: #72efdd;       
+    --pink: #f72585;       
     --card-width: 75px;
     --card-height: 100px;
 }
 
 body {
-    background-color: #2c1e16; 
+    background-color: var(--bg-dark); 
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -16,9 +19,9 @@ body {
 .game-container {
     width: 100%;
     max-width: 400px;
-    background: var(--dark-green);
+    background: var(--container-bg);
     padding: 25px;
-    border: 10px solid var(--brown);
+    border: 10px solid var(--purple);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     border-radius: 8px;
 }
@@ -31,12 +34,14 @@ body {
 .current-score { 
     font-size: 3rem; 
     font-weight: bold; 
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+    text-shadow: 0 0 5px var(--cyan);
+    font-family: 'Arial Black';
+}
 
 .btn-reset { 
-    background: #b71c1c; 
+    background: var(--pink); 
     color: white; 
-    border: 2px solid rgb(83, 1, 1); 
+    border: 2px solid var(--container-bg); 
     padding: 5px 15px; 
     cursor: pointer; 
     font-weight: bold; 
@@ -52,26 +57,44 @@ body {
 
 .column {
     min-height: 300px;
-    border: 2px dashed rgba(255,255,255,0.2);
+    border: 2px dashed var(--purple);
     border-radius: 8px;
     background-size: 100% auto;
     background-repeat: no-repeat;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 2px;
+}
+
+.column:hover {
+    border-color: var(--cyan);
+    background-color: rgba(114, 239, 221, 0.1);
 }
 
 .deck-area {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 50px;
-    padding-top: 20px;
+    padding: 8px;
     border-top: 2px solid rgba(255,255,255,0.1);
+    min-height: 120px;
 }
 
 .card { 
-    width: var(--card-width); 
+    width: 100%; 
     height: var(--card-height); 
     background-size: contain; 
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#current-card-container, #btn-discard .card {
+    width: var(--card-width);
+    height: var(--card-height);
 }
 
 .card-2      { background-image: url('cartas/carta1.png'); }
@@ -85,6 +108,6 @@ body {
 .card-512    { background-image: url('cartas/carta9.png'); }
 .card-1024   { background-image: url('cartas/carta10.png'); }
 .card-2048   { background-image: url('cartas/carta11.png'); }
-.card-4096   { background-image: url('cartas/carta12.png'); }
 .card-discard0 { background-image: url('cartas/cartaDescarte0.png'); }
 .card-discard1 { background-image: url('cartas/cartaDescarte1.png'); }
+.card-discard { background-image: url('cartas/cartaVacia.png'); }
