@@ -5,6 +5,7 @@ const MAX_CARDS = 8;
 
 const scoreEl = document.getElementById('score');
 const columnsEl = document.querySelectorAll('.column');
+const btnDiscard = document.getElementById('btn-discard');
 
 // Generar carta aleatoria
 function generateRandomCard() {
@@ -46,6 +47,12 @@ function render() {
     
     document.querySelector('#current-card-container').innerHTML = `<div class="card card-${currentCard}"></div>`;
 }
+
+// Descartar
+btnDiscard.addEventListener('click', () => {
+    currentCard = generateRandomCard();
+    render();
+});
 
 // Flujo completo del juego
 columnsEl.forEach((col, i) => {
