@@ -51,7 +51,7 @@ function render() {
 columnsEl.forEach((col, i) => {
     col.addEventListener('click', () => {
         if (columns[i].length >= MAX_CARDS) {
-            alert("¡Columna llena! Game Over.");
+            alert("GAME OVER: Columna llena");
             location.reload();
             return;
         }
