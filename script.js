@@ -3,6 +3,8 @@ let currentCard = generateRandomCard();
 const columns = [[], [], [], []];
 const MAX_CARDS = 8;
 
+let discardsLeft = 2;
+
 const scoreEl = document.getElementById('score');
 const columnsEl = document.querySelectorAll('.column');
 const btnDiscard = document.getElementById('btn-discard');
@@ -46,12 +48,23 @@ function render() {
     scoreEl.innerText = score;
     
     document.querySelector('#current-card-container').innerHTML = `<div class="card card-${currentCard}"></div>`;
+
+    const discardCardEl = document.querySelector('#btn-discard .card');
+    if (discardCardEl) {
+        const cardsDiscarded = 2 - discardsLeft;
+        discardCardEl.setAttribute('data-discards', cardsDiscarded);
+    }
 }
 
 // Descartar
 btnDiscard.addEventListener('click', () => {
-    currentCard = generateRandomCard();
-    render();
+    if (discardsLeft > 0) {
+        discardsLeft--; // Restamos un descarte
+        currentCard = generateRandomCard();
+        render();
+    } else {
+        alert("No te quedan más descartes.");
+    }
 });
 
 // Flujo completo del juego
